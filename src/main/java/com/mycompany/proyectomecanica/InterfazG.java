@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  *
@@ -542,6 +544,7 @@ public class InterfazG extends javax.swing.JFrame {
     private javax.swing.JTextField jvelocidadinicial;
     // End of variables declaration//GEN-END:variables
 
+
     public void agregarListenerBotonCalcular(ActionListener listener) {
         // TODO add your handling code here:
         bCalcular.addActionListener(listener);
@@ -566,9 +569,12 @@ public class InterfazG extends javax.swing.JFrame {
             return null;
         }
     }
-    public String DoubleToString(Double D){
-        if(D == null ) return "";
-        return D + "";
+    public String DoubleToString(Double numero){        
+        if(numero == null ) return "";
+
+        BigDecimal bigDecimal = new BigDecimal(numero);
+        BigDecimal resultado = bigDecimal.setScale(5, RoundingMode.HALF_UP);
+        return resultado.doubleValue() + "";
     }
     public Double getJaceleracion() {
         return strToDouble(jaceleracion.getText());

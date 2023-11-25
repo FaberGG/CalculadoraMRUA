@@ -59,13 +59,6 @@ public class ProyectoMecanica {
                 objinterfaz.Bgraficarvt.setEnabled(false);
 
             }
-            //IMPRIMIR RESULTADOS
-            System.out.println("ACELERACION=" + objMrua.getA());
-            System.out.println("TIEMPO=" + objMrua.getT());
-            System.out.println("VO=" + objMrua.getVo());
-            System.out.println("VF=" + objMrua.getVf());
-            System.out.println("XO=" + objMrua.getXo());
-            System.out.println("XF=" + objMrua.getXf());
 
             // Actualizar la interfaz gráfica con los resultados si es necesario
             //Llamamos a los set para setear 
@@ -79,7 +72,6 @@ public class ProyectoMecanica {
 
         //action listener para los botones graficar
         objinterfaz.agregarListenerBgreficarxt((ActionEvent e) -> {
-            System.out.println("se presiono el boton");
 
             //DEFINO LAS VARIABLES
             Double a = objMrua.getA();
@@ -125,8 +117,6 @@ public class ProyectoMecanica {
         });
 
         objinterfaz.agregarListenerBgreficarvt((ActionEvent e) -> {
-            System.out.println("se presiono el boton");
-
             //DEFINO LAS VARIABLES
             Double a = objMrua.getA();
             Double t = objMrua.getT();
